@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PipeTagger.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Test_text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PI_2nd_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">標稱+系統+BOP/COP</Value>
+    </Setting>
+    <Setting Name="DT_C_2nd_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">標稱+系統+BOP/COP</Value>
+    </Setting>
+    <Setting Name="DT_R_2nd_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">WxH+系統+BOD</Value>
+    </Setting>
+    <Setting Name="CN_2nd_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">材質+標稱+BOP</Value>
+    </Setting>
+    <Setting Name="CT_2nd_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">服務類型+標稱+BOD</Value>
+    </Setting>
+    <Setting Name="label_dist_mm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="label_length_mm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="PI_1st_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L_圓形管標籤_標註符號</Value>
+    </Setting>
+    <Setting Name="DT_C_1st_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L_圓形風管標籤_標註符號</Value>
+    </Setting>
+    <Setting Name="DT_R_1st_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L_方形風管標籤_標註符號</Value>
+    </Setting>
+    <Setting Name="CN_1st_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L_電管標籤_標註符號</Value>
+    </Setting>
+    <Setting Name="CT_1st_Selected" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L_電纜架標籤_標註符號</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

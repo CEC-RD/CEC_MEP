@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CEC_PreFabric</Text>
+    <Description>Some description for CEC_PreFabric</Description>
+    <Assembly>CEC_PreFabric.dll</Assembly>
+    <FullClassName>CEC_PreFabric.Command</FullClassName>
+    <ClientId>00c50052-123d-4201-972c-fe3abf9e2944</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CEC_PreFabric</Name>
+    <Assembly>CEC_PreFabric.dll</Assembly>
+    <FullClassName>CEC_PreFabric.App</FullClassName>
+    <ClientId>47a90580-26ef-47ac-ba1e-ad3d170daeea</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

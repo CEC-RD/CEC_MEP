@@ -1,0 +1,121 @@
+﻿<Window x:Class="BeamCasing_ButtonCreate.CastInformUpdateUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BeamCasing_ButtonCreate"
+             mc:Ignorable="d" 
+             Height="400" Width="800"
+        Title="CEC MEP - 穿樑套管資訊更新"
+        WindowStartupLocation="CenterScreen" Background="White">
+    <Grid Margin="8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <!--設定大樑穿樑原則的圖例-->
+        <GroupBox Header="穿樑原則圖示-大樑" Grid.Row="0"  Grid.Column="0" Grid.RowSpan="3"  Grid.ColumnSpan="3"  >
+            <Image x:Name="GriderImage" Margin="0,10" Source="/BeamCasing_ButtonCreate;component/Resources/穿樑原則圖說-01.png"  Stretch="Fill"/>
+        </GroupBox>
+
+        <!--設定小樑穿樑原則的圖例-->
+        <GroupBox Header="穿樑原則圖示-小樑" Grid.Row="4"  Grid.Column="0" Grid.RowSpan="3"  Grid.ColumnSpan="3"  >
+            <Image x:Name="OtherImage" Margin="0,10" Source="/BeamCasing_ButtonCreate;component/Resources/穿樑原則圖說-02.png" Stretch="Fill"/>
+        </GroupBox>
+
+
+        <!--設定各類警示，以tabControl進行設定-->
+        <TabControl Grid.ColumnSpan="4" Grid.Column="4" HorizontalAlignment="Left"  Grid.Row="0" Grid.RowSpan="7"  >
+            <TabItem Header="保護層警示" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="與保護層衝突的穿樑套管ID如下："  Margin="5,15,5,0"/>
+                    <ListBox x:Name="ProtectConflictListBox"  Grid.Row="1" Grid.RowSpan="2" Margin="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="尺寸警示">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="尺寸過大的穿樑套管ID如下："  Margin="5,15,5,0"/>
+                    <ListBox x:Name="TooBigCastListBox"  Grid.Row="1" Grid.RowSpan="2" Margin="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="過近警示">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="與其他套管過近的穿樑套管ID如下："  Margin="5,15,5,0"/>
+                    <ListBox x:Name="TooCloseCastListBox"  Grid.Row="1" Grid.RowSpan="2" Margin="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ST樑警示" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock  Margin="5,15,5,0"><Run Text="在"/><Run Text="ST"/><Run Text="樑中，且與樑的"/><Run Text="兩端過近的"/><Run Text="穿樑套管ID如下："/></TextBlock>
+                    <ListBox x:Name="OtherCastListBox"  Grid.Row="1" Grid.RowSpan="2" Margin="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="RC樑警示">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock  Margin="5,15,5,0"><Run Text="在"/><Run Text="R"/><Run Text="C"/><Run Text="樑中，且與其他柱過近的穿樑套管ID如下："/></TextBlock>
+                    <ListBox x:Name="GriderCastListBox"   Grid.Row="1" Grid.RowSpan="2" Margin="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="空管警示">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="套管中沒有管的穿樑套管ID如下："  Margin="5,15,5,0"/>
+                    <ListBox x:Name="EmptyCastListBox"   Grid.Row="1" Grid.RowSpan="2" Margin="5" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <!--設定ProgressBar-->
+
+        <!--設定確定與取消按鈕-->
+
+        <Button x:Name="ContinueButton" Content="確定" Grid.Column="4" HorizontalAlignment="Left" Margin="155,1,0,0" Grid.Row="8" VerticalAlignment="Top" Width="100" Height="25" Grid.ColumnSpan="3" Click="ContinueButton_Click"/>
+        <Button x:Name="CancelButton" Content="取消" Grid.Column="6" HorizontalAlignment="Left" Grid.Row="8" VerticalAlignment="Top" Width="100" Height="25" Margin="76,1,0,0" Click="CancelButton_Click"/>
+    </Grid>
+</Window>

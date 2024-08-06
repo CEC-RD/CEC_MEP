@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command BeamCasing_ButtonCreate</Text>
+    <Description>Some description for BeamCasing_ButtonCreate</Description>
+    <Assembly>BeamCasing_ButtonCreate.dll</Assembly>
+    <FullClassName>BeamCasing_ButtonCreate.Command</FullClassName>
+    <ClientId>e100ad69-81c5-4155-af08-49d7ffbe086f</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application BeamCasing_ButtonCreate</Name>
+    <Assembly>BeamCasing_ButtonCreate.dll</Assembly>
+    <FullClassName>BeamCasing_ButtonCreate.App</FullClassName>
+    <ClientId>d7687ca7-2dfe-4028-aba3-64375f997e92</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

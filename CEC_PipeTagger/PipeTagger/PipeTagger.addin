@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+
+<!-- This file is for adding the button to run specific -->
+
+<!--In property => Copy if newer-->
+
+
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>PipeTagger</Name>
+		<Assembly>PipeTagger.dll</Assembly>
+		<AddInId>8FBEA77A-36EA-4DE8-B6D4-2D6E791632FB</AddInId>
+		<!--Tool => New GUID-->
+		<FullClassName>PipeTagger.App</FullClassName>
+		<Text>PipeTagger</Text>
+		<Description>Place pipe tags</Description>
+		<VendorId>Isaac Hung</VendorId>
+		<VendorDescription>Isaac Hung's addin</VendorDescription>
+		<VisibilityMode>AlwaysVisible</VisibilityMode>
+	</AddIn>
+
+</RevitAddIns>
+
+
+
+<!--
+Add below to project porpertity -> copy addin files automatically when build successfully.
+
+
+if exist "$(AppData)\Autodesk\Revit\Addins\2019" copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2019"
+if exist "$(AppData)\Autodesk\Revit\Addins\2019" copy "$(ProjectDir)$(OutputPath)*.dll" "$(AppData)\Autodesk\REVIT\Addins\2019"
+if exist "$(AppData)\Autodesk\Revit\Addins\2019" copy "$(ProjectDir)$(OutputPath)\Img\*.png" "$(AppData)\Autodesk\REVIT\Addins\2019"
+
+-->

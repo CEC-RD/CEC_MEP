@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CEC_CADBlockTrans</Text>
+    <Description>Some description for CEC_CADBlockTrans</Description>
+    <Assembly>CEC_CADBlockTrans.dll</Assembly>
+    <FullClassName>CEC_CADBlockTrans.Command</FullClassName>
+    <ClientId>4603e782-8670-44e5-a1c1-3f88656cccd0</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CEC_CADBlockTrans</Name>
+    <Assembly>CEC_CADBlockTrans.dll</Assembly>
+    <FullClassName>CEC_CADBlockTrans.App</FullClassName>
+    <ClientId>28d7af73-c739-4fa9-a056-ae893f84ca4e</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEC_CADBlockTrans", "CEC_CADBlockTrans\CEC_CADBlockTrans.csproj", "{C358F84C-4A18-4246-AF42-A6F14C5344AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2019|Any CPU = 2019|Any CPU
+		2021|Any CPU = 2021|Any CPU
+		2023|Any CPU = 2023|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.2019|Any CPU.ActiveCfg = 2019|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.2019|Any CPU.Build.0 = 2019|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.2021|Any CPU.ActiveCfg = 2021|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.2021|Any CPU.Build.0 = 2021|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.2023|Any CPU.ActiveCfg = 2023|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.2023|Any CPU.Build.0 = 2023|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C358F84C-4A18-4246-AF42-A6F14C5344AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {361872C2-5B8D-4EA0-BFA7-790E616B6739}
+	EndGlobalSection
+EndGlobal

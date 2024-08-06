@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A582E2E-3C84-455D-9861-46D2CED8F05D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeamCasing_ButtonCreate</RootNamespace>
+    <AssemblyName>BeamCasing_ButtonCreate</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2019\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2019\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdWindows, Version=2017.11.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\AdWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RevitAPI, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIFramework, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\UIFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="BeamCasing.cs" />
+    <Compile Include="BeamCastSetting.xaml.cs">
+      <DependentUpon>BeamCastSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BeamCastSetUp.cs" />
+    <Compile Include="BeamCast_Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>BeamCast_Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CastInformUpdateUI.xaml.cs">
+      <DependentUpon>CastInformUpdateUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CastInfromUpdateV3.cs" />
+    <Compile Include="CastInfromUpdateV4.cs" />
+    <Compile Include="CastUpdateProgressUI.xaml.cs">
+      <DependentUpon>CastUpdateProgressUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CopyAllCast.cs" />
+    <Compile Include="CreateBeamCastSTV2.cs" />
+    <Compile Include="CreateBeamCastV2.cs" />
+    <Compile Include="CreateRectBeamCast.cs" />
+    <Compile Include="MultiBeamRectCast.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReUpdateCastNumber.cs" />
+    <Compile Include="UpdateCastNumber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeamCasing_ButtonCreate.addin" />
+    <None Include="Resources\穿樑套管ICON合集_多管開口.png" />
+    <None Include="Resources\穿樑套管ICON合集_方形開口.png" />
+    <Resource Include="Resources\穿樑原則示意修正-01_v2.png" />
+    <Resource Include="Resources\穿樑原則示意修正-02_v2.png" />
+    <Resource Include="Resources\穿樑原則示意修正-02.png" />
+    <Resource Include="Resources\穿樑原則示意修正-01.png" />
+    <None Include="Resources\副穿樑套管ICON合集_複製.png" />
+    <None Include="Resources\穿樑套管ICON合集_編號2.png" />
+    <None Include="Resources\穿樑套管ICON合集_重編號2.png" />
+    <None Include="Resources\穿樑套管ICON合集_編號.png" />
+    <None Include="Resources\穿樑套管ICON合集_重編號.png" />
+    <None Include="Resources\穿樑套管ICON合集_設定.png" />
+    <None Include="Resources\穿樑套管ICON合集_更新.png" />
+    <None Include="Resources\穿樑套管ICON合集_ST.png" />
+    <None Include="Resources\穿樑套管ICON合集_RC.png" />
+    <Resource Include="Resources\穿樑原則示意圖-01.png" />
+    <Resource Include="Resources\穿樑原則示意圖-02.png" />
+    <EmbeddedResource Include="Resources\Grider.png" />
+    <Resource Include="Resources\穿樑原則圖說-02.png" />
+    <Resource Include="Resources\穿樑原則圖說-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BeamCastSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CastInformUpdateUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CastUpdateProgressUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BeamCast_Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>BeamCast_Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterClean">
+    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2019\BeamCasing_ButtonCreate.addin" />
+    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2019\BeamCasing_ButtonCreate.dll" />
+  </Target>
+</Project>

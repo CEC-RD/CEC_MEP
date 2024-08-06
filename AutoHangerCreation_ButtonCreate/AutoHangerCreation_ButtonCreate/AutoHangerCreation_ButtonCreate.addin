@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Application AutoHangerCreation_ButtonCreate</Name>
+    <Assembly>AutoHangerCreation_ButtonCreate.dll</Assembly>
+    <FullClassName>AutoHangerCreation_ButtonCreate.App</FullClassName>
+    <ClientId>b8522543-dc99-4433-bc3f-ae7c9ebfa730</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

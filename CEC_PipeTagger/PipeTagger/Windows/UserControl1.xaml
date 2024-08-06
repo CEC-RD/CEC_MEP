@@ -1,0 +1,44 @@
+﻿<Window x:Class="ControlTemplateDemo.CheckBoxDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CheckBoxDemo" Height="163" Width="300">
+    <Window.Resources>
+        <ControlTemplate x:Key="simpleTemplate" TargetType="ContentControl">
+            <ContentPresenter 
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}">
+            </ContentPresenter>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="myCheckBoxTemplate" TargetType="CheckBox">
+            <Border Margin="4" Padding="4" BorderThickness="1" BorderBrush="Red" >
+                <CheckBox>
+                    <ContentPresenter 
+                    Content="{TemplateBinding Content}"
+                    
+                    ContentTemplate="{TemplateBinding ContentTemplate}">
+                    </ContentPresenter>
+                </CheckBox>
+            </Border>
+        </ControlTemplate>
+
+        <DataTemplate x:Key="myDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <!--<Button Content="OK"  Content="{TemplateBinding Content}" Margin="4" />-->
+                <Button Content="{TemplateBinding Content}" Margin="4" />
+                <Button Content="Cancel" Margin="4"  />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <CheckBox Content="CheckBox 1" Template="{StaticResource simpleTemplate}" />
+            <CheckBox Content="CheckBox 2" Template="{StaticResource myCheckBoxTemplate}" />
+            <CheckBox Content="CheckBox 3" ContentTemplate="{StaticResource myDataTemplate}" />
+            <CheckBox Content="Check Box 4" 
+                  Template="{StaticResource myCheckBoxTemplate}" 
+                  ContentTemplate="{StaticResource myDataTemplate}">
+            </CheckBox>
+        </StackPanel>
+    </Grid>
+</Window>

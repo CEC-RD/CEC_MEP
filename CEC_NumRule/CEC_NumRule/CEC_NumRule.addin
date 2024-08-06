@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CEC_NumRule</Text>
+    <Description>Some description for CEC_NumRule</Description>
+    <Assembly>CEC_NumRule.dll</Assembly>
+    <FullClassName>CEC_NumRule.Command</FullClassName>
+    <ClientId>990d0e92-d4ba-4967-abbc-5dded188191d</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CEC_NumRule</Name>
+    <Assembly>CEC_NumRule.dll</Assembly>
+    <FullClassName>CEC_NumRule.App</FullClassName>
+    <ClientId>05f850d0-4377-481b-aa78-8b0a1daebdb8</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

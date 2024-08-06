@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEC_PreFabric", "CEC_PreFabric\CEC_PreFabric.csproj", "{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2019|Any CPU = 2019|Any CPU
+		2021|Any CPU = 2021|Any CPU
+		2023|Any CPU = 2023|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.2019|Any CPU.ActiveCfg = 2019|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.2019|Any CPU.Build.0 = 2019|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.2021|Any CPU.ActiveCfg = 2021|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.2021|Any CPU.Build.0 = 2021|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.2023|Any CPU.ActiveCfg = 2023|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.2023|Any CPU.Build.0 = 2023|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72EEA2CD-8BEF-43B3-AE64-FF75A5410991}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99457B7B-B9F6-48FB-8277-3CBE3E4A6C03}
+	EndGlobalSection
+EndGlobal

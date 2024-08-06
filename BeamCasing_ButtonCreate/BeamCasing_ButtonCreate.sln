@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeamCasing_ButtonCreate", "BeamCasing_ButtonCreate\BeamCasing_ButtonCreate.csproj", "{6A582E2E-3C84-455D-9861-46D2CED8F05D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2019|Any CPU = 2019|Any CPU
+		2021|Any CPU = 2021|Any CPU
+		2023|Any CPU = 2023|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.2019|Any CPU.ActiveCfg = 2019|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.2019|Any CPU.Build.0 = 2019|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.2021|Any CPU.ActiveCfg = 2021|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.2021|Any CPU.Build.0 = 2021|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.2023|Any CPU.ActiveCfg = 2023|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.2023|Any CPU.Build.0 = 2023|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A582E2E-3C84-455D-9861-46D2CED8F05D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {376AE1AE-D262-4634-86C2-B77A9D89214F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,109 @@
+﻿<Window x:Class="PipeTagger.Windows.setting_tag"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PipeTagger.Windows"
+             mc:Ignorable="d" Height="auto" Width="850" ResizeMode="NoResize"
+            SizeToContent="Height" Title="Mini active manager" Background="White"
+            WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="20"/>
+
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Label    Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" Content="標籤-內容" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Label    Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Content="標籤-長度" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <!--#####################################################################################-->
+
+        <!--設定管標籤-->
+        <Border   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1" Margin="0,10,0,10"/>
+        <Label    Grid.Row="1" Grid.Column="0" Content="管" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold"  VerticalAlignment="Center" Margin="0,25"/>
+        <Image    Grid.Row="1" Grid.Column="1" x:Name="PI_Image" Margin="20"/>
+
+        <ComboBox Grid.Row="1" Grid.Column="2" x:Name="PI_1st_option" VerticalAlignment="Top" SelectionChanged="PI_1st_option_SelectionChanged" Margin="0,15,15,0"/>
+        <ComboBox Grid.Row="1" Grid.Column="2" x:Name="PI_2nd_option" VerticalAlignment="Bottom" Margin="30,0,15,15"/>
+        <!--#####################################################################################-->
+
+
+        <!--設定風管(s)標籤-->
+        <Border   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1"  Margin="0,75"/>
+
+        <!--設定風管(方)標籤-->
+        <Label    Grid.Row="2" Grid.Column="0" Content="風管(方)" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold"  VerticalAlignment="Center" Margin="0,25"/>
+
+        <ComboBox Grid.Row="2" Grid.Column="2" x:Name="DT_R_1st_option" VerticalAlignment="Top" SelectionChanged="DT_R_1st_option_SelectionChanged" Margin="0,15,15,0"/>
+        <ComboBox Grid.Row="2" Grid.Column="2" x:Name="DT_R_2nd_option" VerticalAlignment="Bottom" Margin="30,0,15,15"/>
+
+        <Image    Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center" x:Name="DT_Image" Margin="20"/>
+
+        <!--設定風管(圓)標籤-->
+        <Label    Grid.Row="3" Grid.Column="0" Content="風管(圓)" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold"  VerticalAlignment="Center" Margin="0,25"/>
+        <ComboBox Grid.Row="3" Grid.Column="2" x:Name="DT_C_1st_option" VerticalAlignment="Top" SelectionChanged="DT_C_1st_option_SelectionChanged" Margin="0,15,15,0"/>
+        <ComboBox Grid.Row="3" Grid.Column="2" x:Name="DT_C_2nd_option" VerticalAlignment="Bottom" Margin="30,0,15,15"/>
+        <!--#####################################################################################-->
+
+
+        <!--設定電管標籤-->
+
+        <Border   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1" Margin="0,10,0,10"/>
+        <Label    Grid.Row="4" Grid.Column="0" Content="電管" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold"  VerticalAlignment="Center" Margin="0,25"/>
+        <Image    Grid.Row="4" Grid.Column="1" x:Name="CN_Image" Margin="20" />
+        <ComboBox Grid.Row="4" Grid.Column="2" x:Name="CN_1st_option" VerticalAlignment="Top" SelectionChanged="CN_1st_option_SelectionChanged" Margin="0,15,15,0"/>
+        <ComboBox Grid.Row="4" Grid.Column="2" x:Name="CN_2nd_option" VerticalAlignment="Bottom" Margin="30,0,15,15"/>
+        <!--#####################################################################################-->
+
+
+        <!--設定電纜架標籤-->
+
+        <Border   Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1" Margin="0,10,0,10"/>
+        <Label    Grid.Row="5" Grid.Column="0" Content="電纜架" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold"  VerticalAlignment="Center" Margin="0,25"/>
+        <Image    Grid.Row="5" Grid.Column="1" x:Name="CT_Image"  Margin="20"/>
+        <ComboBox Grid.Row="5" Grid.Column="2" x:Name="CT_1st_option" VerticalAlignment="Top" SelectionChanged="CT_1st_option_SelectionChanged" Margin="0,15,15,0"/>
+        <ComboBox Grid.Row="5" Grid.Column="2" x:Name="CT_2nd_option" VerticalAlignment="Bottom" Margin="30,0,15,15"/>
+        <!--#####################################################################################-->
+
+
+        <!--設定標籤長度-->
+        <Border   Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="4" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1"  Margin="0,10,15,10"/>
+        <Label    Grid.Row="1" Grid.Column="4" Content="距離(a) &#xA; (最短400)" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold" VerticalAlignment="Center" Margin="0,14"/>
+        <TextBox  Grid.Row="1" Grid.Column="5" Text="{Binding ElementName=DistValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Center" Width="60" Margin="0,31"/>
+        <Label    Grid.Row="1" Grid.Column="5" Content="mm" VerticalAlignment="Center" HorizontalAlignment="Right" Width="40" Margin="0,28"/>
+        <Slider   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Minimum="0" Maximum="6000" TickPlacement="BottomRight" TickFrequency="50" IsSnapToTickEnabled="True" Name="DistValue" Margin="0,28" />
+
+        <Image    Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="4" x:Name="Tag_Image" VerticalAlignment="Center" Margin="30"/>
+
+        <Label    Grid.Row="3" Grid.Column="4" Content="長度(b) &#xA; (最短400)" FontSize="16" Foreground="#FF1C5D99" FontWeight="Bold"/>
+        <TextBox  Grid.Row="3" Grid.Column="5" Text="{Binding ElementName=LenValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Center" Width="60" Margin="0,31"/>
+        <Label    Grid.Row="3" Grid.Column="5" Content="mm" VerticalAlignment="Center" HorizontalAlignment="Right" Width="40" Margin="0,28"/>
+        <Slider   Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center"  Minimum="0" Maximum="6000" TickPlacement="BottomRight" TickFrequency="50"  IsSnapToTickEnabled="True" Name="LenValue" Margin="0,28" />
+
+        <!--#####################################################################################-->
+
+
+        <!--設定確定與取消按鈕-->
+        <Button Grid.Row="5" Grid.Column="5" x:Name="ContinueButton" Width="80" FontSize="10" Content="確定" VerticalAlignment="Center" Click="ContinueButton_Click" Margin="10"/>
+        <Button Grid.Row="5" Grid.Column="7" x:Name="CancelButton" Width="80" FontSize="10"  Content="取消" VerticalAlignment="Center" Click="CancelButton_Click" Margin="10"/>
+
+    </Grid>
+</Window>

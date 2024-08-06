@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CEC_Count</Text>
+    <Description>Some description for CEC_Count</Description>
+    <Assembly>CEC_Count.dll</Assembly>
+    <FullClassName>CEC_Count.Command</FullClassName>
+    <ClientId>66e52096-2dc2-4434-ae8e-d71ae21a378b</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CEC_Count</Name>
+    <Assembly>CEC_Count.dll</Assembly>
+    <FullClassName>CEC_Count.App</FullClassName>
+    <ClientId>2f5e4f0e-faf6-43ee-b6c2-85a99f2f0ba5</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

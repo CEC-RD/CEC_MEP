@@ -1,0 +1,67 @@
+﻿<Window x:Class="AutoHangerCreation_ButtonCreate.PipeHangerUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AutoHangerCreation_ButtonCreate"
+             mc:Ignorable="d" 
+             Height="300"
+             Width="380"
+             Title="CEC MEP - 放置單管吊架"
+         WindowStartupLocation="CenterScreen" Background="White"
+             >
+    <Grid>
+        <Border Padding="15">
+            <StackPanel>
+
+                <TextBlock Text="Divide Properties" FontWeight="Bold" FontSize="18" Margin="0 10" />
+
+                <!-- Description -->
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <TextBlock Text="分割長度"  FontSize="12" />
+                        <TextBox x:Name="divideValueBox" Padding="5" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="0 25 0 0">
+                        <TextBlock Text="mm"  FontSize="12" />
+                    </StackPanel>
+                </Grid>
+                <!-- Status and Revision -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+
+                <!-- Raw Material -->
+                <TextBlock Text="Family List" FontWeight="Bold" Margin="0 10 0 10" FontSize="18"/>
+
+                <!--Description-->
+                <TextBlock Text="請選擇欲放置的族群類型"  FontSize="12"/>
+                <ComboBox x:Name="FamilyListBox" SelectedIndex="0" Padding="5">
+                </ComboBox>
+
+                <!-- Buttons -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="ContinueButton" Click="ContinueButton_Click" Padding="5" Margin ="0 30 20 0" Grid.Column="0" Content="確定" FontSize="12" FontWeight="DemiBold"/>
+                    <Button x:Name="CancelButton" Click="CancelButton_Click" Padding="5" Margin ="20 30 0 0" Grid.Column="1" Content="取消" FontSize="12" FontWeight="DemiBold" />
+
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

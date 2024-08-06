@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEC_NumRule", "CEC_NumRule\CEC_NumRule.csproj", "{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2019|Any CPU = 2019|Any CPU
+		2021|Any CPU = 2021|Any CPU
+		2023|Any CPU = 2023|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.2019|Any CPU.ActiveCfg = 2019|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.2019|Any CPU.Build.0 = 2019|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.2021|Any CPU.ActiveCfg = 2021|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.2021|Any CPU.Build.0 = 2021|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.2023|Any CPU.ActiveCfg = 2023|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.2023|Any CPU.Build.0 = 2023|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C6D7BC-E7D4-4C68-B610-E5DD058AD1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B446297-F717-4FFA-845A-D28A300618D2}
+	EndGlobalSection
+EndGlobal

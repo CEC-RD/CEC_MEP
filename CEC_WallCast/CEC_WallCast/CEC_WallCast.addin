@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CEC_WallCast</Text>
+    <Description>Some description for CEC_WallCast</Description>
+    <Assembly>CEC_WallCast.dll</Assembly>
+    <FullClassName>CEC_WallCast.Command</FullClassName>
+    <ClientId>4a69eaef-b368-4aa8-bdd5-67537da65ded</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CEC_WallCast</Name>
+    <Assembly>CEC_WallCast.dll</Assembly>
+    <FullClassName>CEC_WallCast.App</FullClassName>
+    <ClientId>4ec4e1da-fd79-47b4-a22f-3ab57cd9f02b</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
