@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 using System.IO;
 using System.Threading;
+using CEC_Common;
+
 #endregion
 
 namespace CEC_PreFabric
@@ -177,102 +179,115 @@ namespace CEC_PreFabric
                         trans.Commit();
                     }
 
-                    //step3 - 皐癸疭じノ把计だ舱糶计
-                    #region т璶更ノ把计珇摸
-                    //1.璶絋粄硂binding琌
-                    //2.絋粄稱糶珇摸柑Τ⊿Τ硂把计狦Τ玥埃硂珇摸
-                    //3.盢逞珇摸糶琂Τbinding
-                    List<string> paraName1 = new List<string>() {"箇舱╰参", "箇舱加糷", "箇舱跋办", "箇舱絪腹" };
-                    //List<string> paraName = new List<string>() { "恨掉ち絪腹", "掉ち腹" };
-                    string checkString = "";
-                    //foreach (string st in paraName)
-                    foreach (string st in paraName1)
+
+                    List<string> paraName1 = new List<string>() { "箇舱╰参", "箇舱加糷", "箇舱跋办", "箇舱絪腹" };
+                    Para paraManger = new Para();
+                    List<string> typesList = new List<string>() { "恨", "筿恨", "恨" };
+                    foreach (string param in paraName1)
                     {
-                        List<Category> defaultCateList = new List<Category>()
-                {
-                    Category.GetCategory(doc,BuiltInCategory.OST_PipeCurves),
-                    Category.GetCategory(doc,BuiltInCategory.OST_DuctCurves),
-                    Category.GetCategory(doc,BuiltInCategory.OST_Conduit)
-                };
-                        CategorySet catSet = app.Create.NewCategorySet();
-                        foreach (Element e in pickPipes)
-                        {
-                            Category tempCate = e.Category;
-                            if (!catSet.Contains(tempCate))
-                            {
-                                catSet.Insert(tempCate);
-                            }
-                        }
-                        BindingMap bm = doc.ParameterBindings;
-                        DefinitionBindingMapIterator itor = bm.ForwardIterator();
-                        itor.Reset();
-                        Definition d = null;
-                        ElementBinding elemBind = null;
-                        //狦瞷盡い竒更赣把计逆玥ぃ惠穝更
-                        while (itor.MoveNext())
-                        {
-                            d = itor.Key;
-                            if (d.Name == st)
-                            {
-                                elemBind = (ElementBinding)itor.Current;
-                                break;
-                            }
-                        }
-                        //狦赣ノ把计竒更Θ盡把计穝binding
-                        if (d.Name == st && catSet.Size > 0)
-                        {
-                            using (Transaction tx = new Transaction(doc, "Add Binding"))
-                            {
-                                tx.Start();
-                                InstanceBinding ib = doc.Application.Create.NewInstanceBinding(catSet);
-                                bool result = doc.ParameterBindings.ReInsert(d, ib, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS);
-                                tx.Commit();
-                            }
-                        }
-                        //狦赣盡把计临⊿砆更玥更ぇ
-                        else if (d.Name != st)
-                        {
-                            //MessageBox.Show($"盡﹟ゼ更 {spName} 把计盢笆更");
-                            checkString += $"盡﹟ゼ更 {st} 把计盢笆更\n";
-                            //MessageBox.Show($"盡﹟ゼ更 {st} 把计盢笆更");
-                            var infoPath = @"Dropbox\info.json";
-                            var jsonPath = Path.Combine(Environment.GetEnvironmentVariable("LocalAppData"), infoPath);
-                            if (!File.Exists(jsonPath)) jsonPath = Path.Combine(Environment.GetEnvironmentVariable("AppData"), infoPath);
-                            if (!File.Exists(jsonPath)) throw new Exception("叫杆祅Dropbox莱ノ祘Α!");
-                            var dropboxPath = File.ReadAllText(jsonPath).Split('\"')[5];
-                            var spFilePath = dropboxPath + @"\BIM-Share\BIMノ把计.txt";
-                            app.SharedParametersFilename = spFilePath;
-                            DefinitionFile spFile = app.OpenSharedParameterFile();
-                            ExternalDefinition targetDefinition = null;
-                            foreach (DefinitionGroup dG in spFile.Groups)
-                            {
-                                if (dG.Name == "诀筿_箇舱")
-                                {
-                                    foreach (ExternalDefinition def in dG.Definitions)
-                                    {
-                                        if (def.Name == st) targetDefinition = def;
-                                    }
-                                }
-                            }
-                            //ぇ玡璶ミ糵赣把计琌竒砆更诀狦砆更玥ぃ更
-                            if (targetDefinition != null)
-                            {
-                                using (Transaction trans = new Transaction(doc))
-                                {
-                                    trans.Start("更ノ把计");
-                                    InstanceBinding newIB = app.Create.NewInstanceBinding(catSet);
-                                    doc.ParameterBindings.Insert(targetDefinition, newIB, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS);
-                                    trans.Commit();
-                                }
-                            }
-                            else if (targetDefinition == null)
-                            {
-                                MessageBox.Show($"ノ把计い⊿Τт {st} 把计");
-                            }
-                        }
+                        paraManger.AddShardParameterIfNotExists(uiapp, param, typesList, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS, true);
                     }
-                    //MessageBox.Show(checkString);
-                    #endregion
+
+
+
+                    //step3 - 皐癸疭じノ把计だ舱糶计
+                    //    #region т璶更ノ把计珇摸
+                    //    //1.璶絋粄硂binding琌
+                    //    //2.絋粄稱糶珇摸柑Τ⊿Τ硂把计狦Τ玥埃硂珇摸
+                    //    //3.盢逞珇摸糶琂Τbinding
+                    //    List<string> paraName1 = new List<string>() {"箇舱╰参", "箇舱加糷", "箇舱跋办", "箇舱絪腹" };
+                    //    //List<string> paraName = new List<string>() { "恨掉ち絪腹", "掉ち腹" };
+                    //    string checkString = "";
+                    //    //foreach (string st in paraName)
+                    //    foreach (string st in paraName1)
+                    //    {
+                    //        List<Category> defaultCateList = new List<Category>()
+                    //{
+                    //    Category.GetCategory(doc,BuiltInCategory.OST_PipeCurves),
+                    //    Category.GetCategory(doc,BuiltInCategory.OST_DuctCurves),
+                    //    Category.GetCategory(doc,BuiltInCategory.OST_Conduit)
+                    //};
+                    //        CategorySet catSet = app.Create.NewCategorySet();
+                    //        foreach (Element e in pickPipes)
+                    //        {
+                    //            Category tempCate = e.Category;
+                    //            if (!catSet.Contains(tempCate))
+                    //            {
+                    //                catSet.Insert(tempCate);
+                    //            }
+                    //        }
+                    //        BindingMap bm = doc.ParameterBindings;
+                    //        DefinitionBindingMapIterator itor = bm.ForwardIterator();
+                    //        itor.Reset();
+                    //        Definition d = null;
+                    //        ElementBinding elemBind = null;
+                    //        //狦瞷盡い竒更赣把计逆玥ぃ惠穝更
+                    //        while (itor.MoveNext())
+                    //        {
+                    //            d = itor.Key;
+                    //            if (d.Name == st)
+                    //            {
+                    //                elemBind = (ElementBinding)itor.Current;
+                    //                break;
+                    //            }
+                    //        }
+                    //        //狦赣ノ把计竒更Θ盡把计穝binding
+                    //        if (d.Name == st && catSet.Size > 0)
+                    //        {
+                    //            using (Transaction tx = new Transaction(doc, "Add Binding"))
+                    //            {
+                    //                tx.Start();
+                    //                InstanceBinding ib = doc.Application.Create.NewInstanceBinding(catSet);
+                    //                bool result = doc.ParameterBindings.ReInsert(d, ib, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS);
+                    //                tx.Commit();
+                    //            }
+                    //        }
+                    //        //狦赣盡把计临⊿砆更玥更ぇ
+                    //        else if (d.Name != st)
+                    //        {
+                    //            //MessageBox.Show($"盡﹟ゼ更 {spName} 把计盢笆更");
+                    //            checkString += $"盡﹟ゼ更 {st} 把计盢笆更\n";
+                    //            //MessageBox.Show($"盡﹟ゼ更 {st} 把计盢笆更");
+                    //            var infoPath = @"Dropbox\info.json";
+                    //            var jsonPath = Path.Combine(Environment.GetEnvironmentVariable("LocalAppData"), infoPath);
+                    //            if (!File.Exists(jsonPath)) jsonPath = Path.Combine(Environment.GetEnvironmentVariable("AppData"), infoPath);
+                    //            if (!File.Exists(jsonPath)) throw new Exception("叫杆祅Dropbox莱ノ祘Α!");
+                    //            var dropboxPath = File.ReadAllText(jsonPath).Split('\"')[5];
+                    //            var spFilePath = dropboxPath + @"\BIM-Share\BIMノ把计.txt";
+                    //            app.SharedParametersFilename = spFilePath;
+                    //            DefinitionFile spFile = app.OpenSharedParameterFile();
+                    //            ExternalDefinition targetDefinition = null;
+                    //            foreach (DefinitionGroup dG in spFile.Groups)
+                    //            {
+                    //                if (dG.Name == "诀筿_箇舱")
+                    //                {
+                    //                    foreach (ExternalDefinition def in dG.Definitions)
+                    //                    {
+                    //                        if (def.Name == st) targetDefinition = def;
+                    //                    }
+                    //                }
+                    //            }
+                    //            //ぇ玡璶ミ糵赣把计琌竒砆更诀狦砆更玥ぃ更
+                    //            if (targetDefinition != null)
+                    //            {
+                    //                using (Transaction trans = new Transaction(doc))
+                    //                {
+                    //                    trans.Start("更ノ把计");
+                    //                    InstanceBinding newIB = app.Create.NewInstanceBinding(catSet);
+                    //                    doc.ParameterBindings.Insert(targetDefinition, newIB, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS);
+                    //                    trans.Commit();
+                    //                }
+                    //            }
+                    //            else if (targetDefinition == null)
+                    //            {
+                    //                MessageBox.Show($"ノ把计い⊿Τт {st} 把计");
+                    //            }
+                    //        }
+                    //    }
+                    //    //MessageBox.Show(checkString);
+                    //    #endregion
+
+
                     //step4 - 皐癸跌瓜い恨tagだ舱絪腹-->だ舱糶猭赣或糶临σ
                     string filterName = "";
                     int keyToSet = 1;
@@ -288,12 +303,6 @@ namespace CEC_PreFabric
                         string elemName = e.Name;
                         string elemSize = getPipeDiameter(e);
                         double elemLength = Math.Round(e.get_Parameter(BuiltInParameter.CURVE_ELEM_LENGTH).AsDouble(), 2);
-                        //string elemFabName = e.LookupParameter(spName).AsString();
-                        //if (elemFabName != "")
-                        //{
-                        //    MessageBox.Show("匡い恨ンい糶掉ち絪腹叫睲埃絪腹穝糶");
-                        //    return Result.Failed;
-                        //}
                         foreach (Element ee in pickPipes)
                         {
                             double tempLength = Math.Round(ee.get_Parameter(BuiltInParameter.CURVE_ELEM_LENGTH).AsDouble(), 2);
@@ -336,6 +345,7 @@ namespace CEC_PreFabric
                     }
                     //皐癸–じン珇摸夹乓
                     Element multiCateTag = findMultiCateTag(doc);
+                    if (multiCateTag == null) throw new Exception("叫蹲﹚恨掉ち夹乓じン");
                     if (multiCateTag == null) MessageBox.Show("盡﹟ゼ更箇舱跌瓜盡ノ夹乓");
                     using (Transaction trans = new Transaction(doc))
                     {
@@ -391,7 +401,7 @@ namespace CEC_PreFabric
                                         //    systemFilter = new ScheduleFilter(scheduleField.FieldId,ScheduleFilterType.Equal.systemName)
                                         //}
                                         //2.加糷秈︽縵匡
-                                       if (sf.GetName(doc) == paraName1[1])
+                                        if (sf.GetName(doc) == paraName1[1])
                                         {
                                             levelFilter = new ScheduleFilter(scheduleField.FieldId, ScheduleFilterType.Equal, levelName);
                                         }
@@ -445,9 +455,9 @@ namespace CEC_PreFabric
                     transGroup.Assimilate();
                 }
             }
-            catch
+            catch (Exception e)
             {
-                MessageBox.Show("磅︽ア毖");
+                MessageBox.Show($"磅︽ア毖:{e.Message}");
                 return Result.Failed;
             }
             return Result.Succeeded;
