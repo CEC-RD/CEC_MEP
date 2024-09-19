@@ -179,7 +179,6 @@ namespace CEC_PreFabric
                         trans.Commit();
                     }
 
-
                     List<string> paraName1 = new List<string>() { "【預組】系統別", "【預組】樓層", "【預組】區域", "【預組】編號" };
                     Para paraManger = new Para();
                     List<string> typesList = new List<string>() { "管", "電管", "風管" };
@@ -187,106 +186,6 @@ namespace CEC_PreFabric
                     {
                         paraManger.AddShardParameterIfNotExists(uiapp, param, typesList, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS, true);
                     }
-
-
-
-                    //step3 - 針對特殊元素加入共用參數，並加以分組寫入數字
-                    //    #region 找到要載入共用參數的品類
-                    //    //1.要先確認這個binding是否存在
-                    //    //2.確認想寫入的品類裡有沒有這個參數，如果有則去除這個品類
-                    //    //3.將剩下的品類寫入既有binding
-                    //    List<string> paraName1 = new List<string>() {"【預組】系統別", "【預組】樓層", "【預組】區域", "【預組】編號" };
-                    //    //List<string> paraName = new List<string>() { "管料裁切編號", "裁切料號" };
-                    //    string checkString = "";
-                    //    //foreach (string st in paraName)
-                    //    foreach (string st in paraName1)
-                    //    {
-                    //        List<Category> defaultCateList = new List<Category>()
-                    //{
-                    //    Category.GetCategory(doc,BuiltInCategory.OST_PipeCurves),
-                    //    Category.GetCategory(doc,BuiltInCategory.OST_DuctCurves),
-                    //    Category.GetCategory(doc,BuiltInCategory.OST_Conduit)
-                    //};
-                    //        CategorySet catSet = app.Create.NewCategorySet();
-                    //        foreach (Element e in pickPipes)
-                    //        {
-                    //            Category tempCate = e.Category;
-                    //            if (!catSet.Contains(tempCate))
-                    //            {
-                    //                catSet.Insert(tempCate);
-                    //            }
-                    //        }
-                    //        BindingMap bm = doc.ParameterBindings;
-                    //        DefinitionBindingMapIterator itor = bm.ForwardIterator();
-                    //        itor.Reset();
-                    //        Definition d = null;
-                    //        ElementBinding elemBind = null;
-                    //        //如果現在的專案中已經載入該參數欄位，則不需重新載入
-                    //        while (itor.MoveNext())
-                    //        {
-                    //            d = itor.Key;
-                    //            if (d.Name == st)
-                    //            {
-                    //                elemBind = (ElementBinding)itor.Current;
-                    //                break;
-                    //            }
-                    //        }
-                    //        //如果該共用參數已經載入成為專案參數，重新加入binding
-                    //        if (d.Name == st && catSet.Size > 0)
-                    //        {
-                    //            using (Transaction tx = new Transaction(doc, "Add Binding"))
-                    //            {
-                    //                tx.Start();
-                    //                InstanceBinding ib = doc.Application.Create.NewInstanceBinding(catSet);
-                    //                bool result = doc.ParameterBindings.ReInsert(d, ib, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS);
-                    //                tx.Commit();
-                    //            }
-                    //        }
-                    //        //如果該專案參數還沒被載入，則載入之
-                    //        else if (d.Name != st)
-                    //        {
-                    //            //MessageBox.Show($"專案尚未載入「 {spName}」 參數，將自動載入");
-                    //            checkString += $"專案尚未載入「 {st}」 參數，將自動載入\n";
-                    //            //MessageBox.Show($"專案尚未載入「 {st}」 參數，將自動載入");
-                    //            var infoPath = @"Dropbox\info.json";
-                    //            var jsonPath = Path.Combine(Environment.GetEnvironmentVariable("LocalAppData"), infoPath);
-                    //            if (!File.Exists(jsonPath)) jsonPath = Path.Combine(Environment.GetEnvironmentVariable("AppData"), infoPath);
-                    //            if (!File.Exists(jsonPath)) throw new Exception("請安裝並登入Dropbox桌面應用程式!");
-                    //            var dropboxPath = File.ReadAllText(jsonPath).Split('\"')[5];
-                    //            var spFilePath = dropboxPath + @"\BIM-Share\BIM共用參數.txt";
-                    //            app.SharedParametersFilename = spFilePath;
-                    //            DefinitionFile spFile = app.OpenSharedParameterFile();
-                    //            ExternalDefinition targetDefinition = null;
-                    //            foreach (DefinitionGroup dG in spFile.Groups)
-                    //            {
-                    //                if (dG.Name == "機電_預組")
-                    //                {
-                    //                    foreach (ExternalDefinition def in dG.Definitions)
-                    //                    {
-                    //                        if (def.Name == st) targetDefinition = def;
-                    //                    }
-                    //                }
-                    //            }
-                    //            //在此之前要建立一個審核該參數是否已經被載入的機制，如果已被載入則不載入
-                    //            if (targetDefinition != null)
-                    //            {
-                    //                using (Transaction trans = new Transaction(doc))
-                    //                {
-                    //                    trans.Start("載入共用參數");
-                    //                    InstanceBinding newIB = app.Create.NewInstanceBinding(catSet);
-                    //                    doc.ParameterBindings.Insert(targetDefinition, newIB, BuiltInParameterGroup.PG_SEGMENTS_FITTINGS);
-                    //                    trans.Commit();
-                    //                }
-                    //            }
-                    //            else if (targetDefinition == null)
-                    //            {
-                    //                MessageBox.Show($"共用參數中沒有找到 {st} 參數");
-                    //            }
-                    //        }
-                    //    }
-                    //    //MessageBox.Show(checkString);
-                    //    #endregion
-
 
                     //step4 - 針對視圖中的管材加上tag，分組並上入編號-->分組的寫法該怎麼寫還待思考
                     string filterName = "";
@@ -330,8 +229,6 @@ namespace CEC_PreFabric
                                     string systemName = p.get_Parameter(BuiltInParameter.RBS_DUCT_PIPE_SYSTEM_ABBREVIATION_PARAM).AsString();
                                     //string numToSet = systemName + "-" + levelName + "-" + regionName + "-" + keyToSet.ToString();
                                     filterName = systemName + "-" + levelName + "-" + regionName;
-                                    //fabNum.Set(keyToSet.ToString());
-                                    //fabFullName.Set(numToSet);
                                     pipeSystem.Set(systemName);
                                     pipeLevel.Set(levelName);
                                     pipeRegion.Set(regionName);
@@ -366,13 +263,8 @@ namespace CEC_PreFabric
                         }
                         trans.Commit();
                     }
-                    //MessageBox.Show(outPut);
 
                     //step5 創造管段明細表
-                    //List<string> scheduleParas = new List<string>()
-                    //{
-                    //    "裁切料號","系統類型","管料裁切編號","大小","長度","數量"
-                    //};
                     List<string> tempList = new List<string>() { "大小", "長度", "數量" };
                     List<string> scheduleParas = new List<string>();
                     scheduleParas = paraName1.Union(tempList).ToList();
@@ -382,7 +274,6 @@ namespace CEC_PreFabric
                         ElementId pipeCateId = new ElementId(BuiltInCategory.OST_PipeCurves);
                         ViewSchedule schedule = ViewSchedule.CreateSchedule(doc, pipeCateId);
                         schedule.Name = viewName + "管料裁切明細表";
-                        //ScheduleFilter numFilter = null;
                         ScheduleFilter systemFilter = null;
                         ScheduleFilter levelFilter = null;
                         ScheduleFilter regionFilter = null;
@@ -430,19 +321,6 @@ namespace CEC_PreFabric
                                     }
                                 }
                             }
-                            #region 添加欄位的舊寫法
-                            //foreach (SchedulableField sf in schedule.Definition.GetSchedulableFields())
-                            //{
-                            //    if (scheduleParas.Contains(sf.GetName(doc)))
-                            //    {
-                            //        ScheduleField scheduleField = schedule.Definition.AddField(sf);
-                            //        if (sf.GetName(doc) == "裁切料號")
-                            //        {
-                            //            numFilter = new ScheduleFilter(scheduleField.FieldId, ScheduleFilterType.Contains, filterName);
-                            //        }
-                            //    }
-                            //}
-                            #endregion
                             //目前尚缺減去詳細列舉每個實體的機制&針對明細表攔位的排序
                         }
                         //schedule.Definition.AddFilter(numFilter);
@@ -590,10 +468,6 @@ namespace CEC_PreFabric
             {
                 return true;
             }
-            //else if (element.Category.Id == pipeFitting.Id)
-            //{
-            //    return true;
-            //}
             return false;
         }
 

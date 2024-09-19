@@ -54,6 +54,7 @@
   <ItemGroup>
     <Reference Include="CEC_Common">
       <HintPath>..\..\..\CEC_Common\CEC_Common\bin\2021\CEC_Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
